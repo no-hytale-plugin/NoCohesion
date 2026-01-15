@@ -1,7 +1,7 @@
 package noplugin.nocohesion;
 
-public record PluginServiceRegistration<T extends PluginService, U extends T> (
+public record PluginServiceRegistration<T extends PluginService> (
         Class<T> serviceInterface,
-        U serviceImplementation
+        T serviceImplementation
 ) {
 }

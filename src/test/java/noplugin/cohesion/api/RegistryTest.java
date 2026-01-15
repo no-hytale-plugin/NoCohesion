@@ -20,7 +20,7 @@ public class RegistryTest {
 
     static void main() {
         MyService myService = new MyService();
-        PluginServiceRegistration<MyInterface, MyService> registration = new PluginServiceRegistration<>(MyInterface.class, myService);
+        var registration = new PluginServiceRegistration<>(MyInterface.class, myService);
 
         PluginServiceRegistry.get().registerSingle(registration);
         Optional<MyInterface> single = PluginServiceRegistry.get().getSingle(MyInterface.class);

@@ -27,13 +27,12 @@ public enum PluginServiceRegistry {
      * Register the implementation of a service of which we expect only one implementation
      * @param registration         the registration of a service
      * @param <T>   an interface that extends {@link PluginService}
-     * @param <U>   the type of the implementation of the T service.
      */
-    public <T extends PluginService, U extends T> void registerSingle(PluginServiceRegistration<T, U> registration) {
+    public <T extends PluginService> void registerSingle(PluginServiceRegistration<T> registration) {
         Objects.requireNonNull(registration, "serviceInterface must not be null");
         Class<T> serviceInterface = registration.serviceInterface();
         Objects.requireNonNull(serviceInterface, "serviceInterface must not be null");
-        U serviceImplementation = registration.serviceImplementation();
+        T serviceImplementation = registration.serviceImplementation();
 
         PluginService currentImplementation = singlesRegistry.get(serviceInterface);
         if (currentImplementation != null) {
@@ -47,13 +46,12 @@ public enum PluginServiceRegistry {
      * Register the implementation of a service of which we accept many implementations
      * @param registration         the registration of a service
      * @param <T>   an interface that extends {@link PluginService}
-     * @param <U>   the type of the implementation of the T service.
      */
-    public <T extends PluginService, U extends T> void registerOneOfMany(PluginServiceRegistration<T, U> registration) {
+    public <T extends PluginService> void registerOneOfMany(PluginServiceRegistration<T> registration) {
         Objects.requireNonNull(registration, "registration must not be null");
         Class<T> serviceInterface = registration.serviceInterface();
         Objects.requireNonNull(serviceInterface, "serviceInterface must not be null");
-        U serviceImplementation = registration.serviceImplementation();
+        T serviceImplementation = registration.serviceImplementation();
 
         List<? super PluginService> implementations = manyRegistry.computeIfAbsent(serviceInterface, k -> new CopyOnWriteArrayList<>());
         implementations.add(serviceImplementation);
