@@ -1,0 +1,14 @@
+{
+  "Group": "NoPlugin",
+  "Name": "NoCohesion",
+  "Version": "0.1.0",
+  "Authors": [
+    {
+      "Name": "Nokorbis",
+      "Url": "https://github.com/Nokorbis"
+    }
+  ],
+  "Website": "https://github.com/no-hytale-plugin/NoCohesion",
+  "Main": "noplugin.hytale.plugins.nocohesion.NoCohesionPlugin",
+  "ServerVersion": "*"
+}

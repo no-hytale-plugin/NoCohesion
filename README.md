@@ -17,8 +17,8 @@ You offer them to other plugin developers:
 ```java
 package yourplugin;
 
-import noplugin.nocohesion.PluginServiceRegistration;
-import noplugin.nocohesion.PluginServiceRegistry;
+import noplugin.hytale.plugins.nocohesion.PluginServiceRegistration;
+import noplugin.hytale.plugins.nocohesion.PluginServiceRegistry;
 
 public class YourPlugin extends JavaPlugin {
     // Your constructor...
@@ -27,7 +27,7 @@ public class YourPlugin extends JavaPlugin {
         // Your initialization
         var yourImplementation = new YourServiceImplementation();
         PluginServiceRegistry.get().registerSingle(
-            new PluginServiceRegistration<>(YourServiceInterface.class, yourImplementation)
+                new PluginServiceRegistration<>(YourServiceInterface.class, yourImplementation)
         );
     }
 }

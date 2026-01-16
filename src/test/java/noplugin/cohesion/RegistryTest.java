@@ -1,8 +1,8 @@
-package noplugin.cohesion.api;
+package noplugin.cohesion;
 
-import noplugin.nocohesion.PluginService;
-import noplugin.nocohesion.PluginServiceRegistration;
-import noplugin.nocohesion.PluginServiceRegistry;
+import noplugin.hytale.plugins.nocohesion.PluginService;
+import noplugin.hytale.plugins.nocohesion.PluginServiceRegistration;
+import noplugin.hytale.plugins.nocohesion.PluginServiceRegistry;
 
 import java.util.Optional;
 
